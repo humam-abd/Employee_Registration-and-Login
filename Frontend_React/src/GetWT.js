@@ -26,7 +26,7 @@ class DetailWT extends Component {
     var mytoken = this.state.DToken;
     var options = {
       headers: {
-        'Authorization':`Bearer : ${mytoken}`
+        'Authorization':`Bearer ${mytoken}`
       }
     };
     var param = {
