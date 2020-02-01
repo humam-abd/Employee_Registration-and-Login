@@ -4,7 +4,7 @@ var response = require("../response/response");
 
 exports.verifytoken = function(req, res, next) {
     var token;
-    // var token = req.headers['access-token'];
+    // var token = req.headers['x-access-token'];
 
     //For using Authorization and Bearers in headers
     if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {

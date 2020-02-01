@@ -39,7 +39,7 @@ exports.log = async function (email, password, callback) {
                 return callback(response.setresponse(false, '', "401", "invalid password", {}));
             }
             var token = jwt.sign({ id: data._id, role: "user" }, config.secret, {
-                expiresIn: 200
+                expiresIn: 500
             });
             return callback({ data, token })
 
@@ -59,7 +59,7 @@ exports.tkdetails = async function (email, callback) {
             if (!empl) {
                 return callback(response.setresponse(false, "", "", "Not found", {}))
             }
-            return callback(response.setresponse(true, "", "200", "Successful in getting data", { empl }))
+            return callback(empl)
         })
     } catch (err) {
         return callback(response.setresponse(false, "", "", "Error", {}))

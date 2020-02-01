@@ -30,6 +30,8 @@ class Login extends Component {
             .then(res => {
                 console.log(res);
                 console.log(res.data.token)
+                this.setState({mytoken:res.data.token})
+
             })
             .catch(function (err) {
                 console.log("Error", err)
@@ -47,7 +49,8 @@ class Login extends Component {
                 </form><br />
                 <a href="/details">Get Details Here</a>
                 <br />
-                <a href="/register">Register Here</a>
+                <a href="/register">Register Here</a><br/>
+                <p>{this.state.mytoken}</p>
             </div>);
     }
 }
