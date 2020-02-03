@@ -29,8 +29,9 @@ class Login extends Component {
         })
             .then(res => {
                 console.log(res);
+                console.log(res.data)
                 console.log(res.data.token)
-                this.setState({mytoken:res.data.token})
+                this.setState({mytokent:res.data.token})
 
             })
             .catch(function (err) {
@@ -50,7 +51,7 @@ class Login extends Component {
                 <a href="/details">Get Details Here</a>
                 <br />
                 <a href="/register">Register Here</a><br/>
-                <p>{this.state.mytoken}</p>
+                <p>{this.state.mytokent}</p>
             </div>);
     }
 }

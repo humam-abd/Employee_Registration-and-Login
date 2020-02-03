@@ -11,35 +11,32 @@ class DetailWT extends Component {
       DToken: ""
     };
   }
-  detEmail = event => {
+  detEmail = (event) => {
     this.setState({ Demail: event.target.value });
   };
-  detToken = event => {
+  detToken = (event) => {
     this.setState({ DToken: event.target.value });
   };
-  detLog = event => {
+  detLog = (event) => {
     event.preventDefault();
     this.details();
   };
 
   details = () => {
     var mytoken = this.state.DToken;
-    var options = {
-      headers: {
-        'Authorization':`Bearer ${mytoken}`
-      }
-    };
-    var param = {
-      params: {
-        email: this.state.Demail
-      }
-    };
-    axios
-      .get("http://localhost:81/route/acc/wtoken", param, options)
+    axios.get("http://localhost:81/route/acc/wtoken", 
+        {
+          'params':{
+            'email': this.state.Demail
+          },
+        'headers': {
+          "x-access-token": mytoken
+        }
+        })
       .then(res => {
         console.log(res.data);
       })
-      .catch(function(err) {
+      .catch(function (err) {
         console.log("Error", err);
       });
   };
