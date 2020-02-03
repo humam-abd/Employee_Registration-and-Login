@@ -4,12 +4,12 @@ var response = require("../response/response");
 
 function verifytoken (req, res, next) {
     var token;
-    token = req.headers['x-access-token'];
+    // token = req.headers['x-access-token'];
 
     //For using Authorization and Bearers in headers
-    // if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
-    //     token = req.headers.authorization.split(' ')[1];
-    // }
+    if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
+        token = req.headers.authorization.split(' ')[1];
+    }
     // console.log(req.headers.authorization)
     // console.log(token);
 

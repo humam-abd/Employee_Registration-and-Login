@@ -23,18 +23,21 @@ class DetailWT extends Component {
   };
 
   details = () => {
-    var mytoken = this.state.DToken;
-    axios.get("http://localhost:81/route/acc/wtoken", 
-        {
-          'params':{
-            'email': this.state.Demail
-          },
+    var mytoken = JSON.parse(localStorage.getItem("token"));
+    axios.get("http://localhost:81/route/acc/wtoken",
+      {
+        'params': {
+          'email': this.state.Demail
+        },
         'headers': {
-          "x-access-token": mytoken
+          "Authorization": `Bearer ${mytoken}`
+          //or 
+          // "x-access-token": mytoken
         }
-        })
+      })
       .then(res => {
         console.log(res.data);
+        this.setState({datum:"Data is received(See console)"});
       })
       .catch(function (err) {
         console.log("Error", err);
@@ -53,19 +56,11 @@ class DetailWT extends Component {
             type="email"
           />
           <br />
-          <input
-            className="inp2"
-            id="DToken"
-            value={this.state.DToken}
-            onChange={this.detToken}
-            placeholder="Token"
-            type="text"
-          />
-          <br />
           <input type="submit" id="sub" value="Get Data" />
         </form>
         <br />
-        <a href="/">Login Here</a>
+        <a href="/">Login Here</a><br/>
+    <p>{this.state.datum}</p>
       </div>
     );
   }
