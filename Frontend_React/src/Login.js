@@ -45,11 +45,11 @@ class Login extends Component {
                     <br />
                     <input className="inp" id="lpassword" value={this.state.lpassword} onChange={this.loginPassword} placeholder="Password" type="password" />
                     <br />
-                    <input type="submit" id="sub" value="Login" />
+                    <input type="submit" className="waves-effect waves-light btn" id="sub" value="Login" />
                 </form><br />
-                <a href="/details">Get Details Here</a>
+                <a href="/details" className="waves-effect waves-light btn">Get Details Here</a>
                 <br />
-                <a href="/register">Register Here</a><br/>
+                <a href="/register" className="waves-effect waves-light btn">Register Here</a><br/>
             </div>);
     }
 }

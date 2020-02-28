@@ -122,7 +122,8 @@ class Axregister extends Component {
                         onChange={this.handleAddr}
                     />
                     <br />
-                    <input id="sub" type="submit" value="Register" />
+
+                    <input id="sub" className="waves-effect waves-light btn" type="submit" value="Register" />
                     <br />
                 </form>
                 <div><br />
@@ -132,7 +133,7 @@ class Axregister extends Component {
                     <p>{this.state.paddr}</p>
                 </div>
                 <br />
-                <a href="/">Login Here</a>
+                <a href="/" className="waves-effect waves-light btn">Login Here</a>
             </div>
         );
     }

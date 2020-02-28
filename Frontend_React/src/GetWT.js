@@ -56,10 +56,10 @@ class DetailWT extends Component {
             type="email"
           />
           <br />
-          <input type="submit" id="sub" value="Get Data" />
+          <input type="submit" className="waves-effect waves-light btn" id="sub" value="Get Data" />
         </form>
         <br />
-        <a href="/">Login Here</a><br/>
+        <a href="/" className="waves-effect waves-light btn">Login Here</a><br/>
     <p>{this.state.datum}</p>
       </div>
     );
